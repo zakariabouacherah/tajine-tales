@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap');
+
+:root {
+    --primary-color-1 : #758650;
+    --primary-color-2 : #e8b634;
+    --secondary-color-1 : #b5c267;
+    --secondary-color-2 : #FFE27C;
+    --secondary-color-3 : #dadbcd;
+    --secondary-color-4 : #d4d5c5;
+    --bg-color : #FCFAF8;
+    --text-color : #140F1F; 
+    --main-white : #f4fcf6;
+    --main-black : #02100f;
+    --main-transition : ease all .3s ;
+}
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo,
+.logo > span {
+    font-family: 'Rubik Scribble' , sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+textarea {
+    resize: none;
+}
+img {
+    width:100%;
+}
+.logo1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--primary-color-2);
+    letter-spacing: .14rem;
+}
+.logo1 {
+    text-transform: lowercase !important;
+}
+.logo1 > span {
+    text-transform: uppercase !important;
+}
+
+.logo1 > span {
+    font-size: 1.6rem;
+    color: var(--primary-color-1);
+    letter-spacing: .04rem;
+}
+
+
+.p-section {
+    padding: 80px 120px;
+}

@@ -1,0 +1,225 @@
+.banner {
+  width: 100%;
+  height: 40svh;
+  background: url("../../../public/banner1.jpg") no-repeat center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 120px;
+}
+.banner::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #0006;
+}
+.banner > h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: var(--main-white);
+  z-index: 5;
+  text-align: center;
+}
+
+.recipes-grid-container {
+  padding: 120px;
+  background-color: var(--main-white);
+}
+.recipes-list-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  place-content: center;
+}
+.one-recipe {
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 1px 5px 35px -10px #0004;
+  position: relative;
+  cursor: pointer;
+}
+.one-recipe:hover .save {
+  display: block;
+}
+.one-recipe:hover .recipe-img-container img {
+  transform: scale(1.1);
+}
+.recipe-img-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.recipe-img-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--main-transition);
+}
+.recipe-det {
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.recipe-det > h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--primary-color-1);
+}
+.recipe-det > p {
+  font-size: 0.9rem;
+  color: var(--main-black);
+}
+.recipe-det > button {
+  padding: 6px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--secondary-color-3);
+  color: var(--primary-color-1);
+  font-size: 1rem;
+  transition: var(--main-transition);
+  font-weight: 400;
+  cursor: pointer;
+}
+.recipe-det > button:hover {
+  background-color: var(--secondary-color-4);
+}
+.pagination {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.pagination > button {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--primary-color-2);
+  color: var(--main-white);
+  cursor: pointer;
+  box-shadow:0 5px  15px -5px #0004;
+}
+.currentPage {
+    background-color: var(--secondary-color-2) !important;
+    transform: scale(1.4);
+}
+.header {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.header > h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 70%;
+    color: var(--main-black);
+}
+.header > .search-block {
+    display: flex;
+    align-items: center;
+}
+.header > .search-block input {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: 1.5px solid transparent;
+    outline: none;
+    border-radius: 8px 0 0 8px;
+    box-shadow: 0 0 25px -10px #0004;
+}
+.header > .search-block input:focus {
+    border: 1.5px solid var(--secondary-color-2);
+}
+.header > .search-block button {
+    height: 36px;
+    padding: 0 10px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 0 25px -10px #0004;
+    border: none;
+    background-color: var(--secondary-color-2);
+}
+
+/* sug-section */
+
+.suggest-container {
+    background-color: var(--main-white);
+    padding: 60px 0 120px;
+}
+.suggest-container .sug-frame {
+    padding: 0 120px;
+    background: linear-gradient(290deg , var(--secondary-color-1) ,  var(--primary-color-1) ) ;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    place-items: center;
+    gap: 80px;
+}
+.sug-img-container {
+    margin: -40px 0;
+    border-radius: 20px;
+    position: relative;
+    min-width: 100%;
+    height: 340px;
+    box-shadow: 0 0 25px #0006;
+    overflow: hidden;
+    transform: rotate(5deg);
+}
+.sug-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotateY(180deg);
+}
+.sug-img-container::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #2226;
+    transition: var(--main-transition);
+}
+.sug-img-container:hover::after {
+    height: 0%;
+    background-color: #2220;
+}
+.suggest-container .content {
+    color: var(--main-white);
+}
+.suggest-container .content h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.suggest-container .content p {
+    font-size: .9rem;
+    margin-bottom: 10px;
+    opacity: .8;
+}
+.suggest-container .content > a {
+    color: var(--main-white);
+    text-transform: uppercase; 
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: var(--main-transition);
+}
+.suggest-container .content > a:hover {
+    text-decoration: underline;
+    gap: 15px;
+}

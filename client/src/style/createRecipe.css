@@ -1,0 +1,94 @@
+.create-recipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-btn {
+    align-self: flex-start;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--secondary-color-3);
+    color: var(--primary-color-1);
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+.add-btn:hover {
+    background-color: var(--secondary-color-4);
+}
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: var(--bg-color);
+    color: var(--primary-color-1);
+    font-size: 100%;
+    position: absolute;
+    padding: 4px 5px;
+    bottom: -3em;
+    left: 50%;
+    white-space: nowrap;
+    opacity: 0;
+    border: 1px solid var(--primary-color-1);
+    border-radius: 4px;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
+form.create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    width: 80%;
+    background-color: var(--main-white);
+    padding: 20px 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px -5px #0002;
+}
+
+.create-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+}
+.create-form-group label {
+    font-size: .9rem;
+    color: var(--main-black);
+}
+.create-form-group input,
+.create-form-group textarea {
+    font-size: .9rem;
+    padding: 9px 12px;
+    outline: none;
+    border: 1.5px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px -5px #0002;
+}
+.create-form-group textarea {
+    font-size: .8rem;
+}
+.create-form-group input:focus,
+.create-form-group textarea:focus {
+    border: 1.5px solid var(--primary-color-1);
+}
+.create {
+    background-color: var(--secondary-color-3);
+    color: var(--primary-color-1);
+    border: none;
+    outline: none;
+    font-size: .9rem;
+    padding: 9px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: var(--main-transition);
+}
+.create:hover {
+    background-color: var(--secondary-color-4);
+}

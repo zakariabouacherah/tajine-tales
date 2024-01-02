@@ -1,0 +1,23 @@
+.cre-rec-body {
+    padding: 60px 120px 120px;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+.cre-rec-body > .left {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    text-align: center;
+    gap: 60px;
+}
+.cre-rec-body > .left > p {
+    font-size: .9rem;
+    opacity: .8;
+    color: var(--main-black);
+}
+.cre-rec-body > .left > .cre-rec-img-container img {
+    height: 100%;
+    object-fit: cover;
+
+}

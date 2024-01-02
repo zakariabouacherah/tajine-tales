@@ -1,0 +1,128 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 30px;
+  background-color: transparent;
+  box-shadow: 0 0 15px 6px #33333323;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+}
+.nav-bg {
+  backdrop-filter: blur(6px);
+  background: #0008;
+  transition: 1s ease all;
+}
+.logo {
+  font-size: 1.8rem;
+  color: var(--primary-color-2);
+}
+.left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.nav-right {
+    gap: 30px;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-item {
+  font-size: 1rem;
+  position: relative;
+}
+.nav-item a {
+  color: var(--bg-color);
+}
+.nav-item::after {
+  position: absolute;
+  content: "";
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--secondary-color-1);
+  transition: var(--main-transition);
+}
+.nav-item:hover::after {
+  width: 50%;
+}
+.nav-item:hover > a {
+  color: var(--secondary-color-1);
+}
+.login-btn {
+  color: var(--main-white);
+  font-size: 0.9rem;
+  background-color: var(--primary-color-2);
+  padding: 6px 12px;
+  border-radius: 40px;
+  transition: var(--main-transition);
+}
+.login-btn:hover {
+  background-color: var(--secondary-color-2);
+}
+.profil {
+  position: relative;
+}
+.profil p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--primary-color-2);
+  color: var(--primary-color-2);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-color);
+  padding: 14px 24px;
+  right: 0px;
+  bottom: -160px;
+  min-width: 160px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 6px;
+  box-shadow: 0 0 12px 6px #3331;
+}
+
+.profil:hover .dropdown-content {
+  display: block;
+}
+.username {
+  color: var(--primary-color-1);
+  border-bottom: 2px solid var(--primary-color-1);
+  margin-bottom: 20px;
+}
+
+.favourites {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.favourites > svg > path {
+    fill: red;
+}
+.profile-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    border-bottom: 2px solid var(--primary-color-1);
+    margin-bottom: 20px;
+    color: var(--primary-color-1);
+}

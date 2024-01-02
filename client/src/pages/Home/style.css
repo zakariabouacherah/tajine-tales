@@ -1,0 +1,412 @@
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8rem;
+  gap: 20px;
+  height: calc(100vh);
+  background: url(../../../public/Tagine.jpg) no-repeat center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #2224, #111b);
+  z-index: -1;
+}
+.hero-section-title:not(.logo1) {
+  color: var(--bg-color);
+  text-transform: uppercase;
+  line-height: 2.4rem;
+  width: 60%;
+}
+.hero-section-title > span {
+  color: var(--secondary-color-3);
+  font-size: 0.9rem;
+}
+.hero-section-title > h2 {
+  font-size: 2.8rem;
+  line-height: 3rem;
+}
+.hero-section-title > p {
+  font-size: 1.2rem;
+  color: var(--secondary-color-3);
+  font-weight: 300;
+}
+.get-started-btn {
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+  border: none;
+  background: var(--secondary-color-3);
+  color: var(--primary-color-1);
+  padding: 16px 0 16px 26px;
+  width: 200px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+  transition: var(--main-transition);
+  line-height: 0 !important;
+}
+.explore-btn {
+  width: 240px !important;
+}
+.cta-content > .get-started-btn {
+  margin-top: 1rem;
+}
+.get-started-btn:hover {
+  gap: 1rem;
+}
+
+/* second section */
+.recipes-section {
+  background-color: var(--main-black);
+  color: var(--secondary-color-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.section-header {
+  width: 80%;
+  text-align: center;
+
+}
+.section-header .section-title {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+.section-header .section-title > span {
+  color: var(--primary-color-1);
+  position: relative;
+  z-index: 2;
+}
+.section-header .section-title > span::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: var(--secondary-color-3);
+  z-index: -1;
+}
+.section-header .section-text {
+  font-size: 1rem ;
+  opacity: .7;
+}
+.section-header .section-text .logo1 {
+  font-size: 1rem !important ;
+}
+.section-header .section-text .logo1 > span {
+  font-size: 1.2rem !important ;
+}
+.section-body {
+  width: 100%;
+}
+.recipes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.recipe-item {
+  padding: 0.4rem;
+  background-color: rgba(70, 70, 70, 0.7);
+  border-radius: 12px;
+  position: relative;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.recipe-item:nth-of-type(even) {
+  background-color: #ffe27c66;
+}
+.recipe-item .image-container {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.recipe-item .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--main-transition);
+}
+.recipe-item .recipe-details {
+  padding: 0 1rem;
+  color: var(--main-white);
+}
+.recipe-item .recipe-details h4 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.03rem;
+}
+.recipe-item .recipe-details p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04rem;
+  opacity: 0.7;
+}
+.recipe-item .recipe-details button {
+  padding: 8px 22px;
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  color: var(--primary-color-1);
+  background-color: var(--secondary-color-3);
+  transition: var(--main-transition);
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.recipe-item .recipe-details button:hover {
+  background-color: var(--secondary-color-4);
+}
+.save {
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  display: none;
+  transition: var(--main-transition);
+  z-index: 4;
+}
+.save > svg > path {
+  fill: #e21309;
+}
+.recipe-item:hover .save {
+  display: block;
+}
+.recipe-item:hover .image-container img {
+  transform: scale(1.06);
+}
+.skeleton-list {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+}
+.skeleton-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  background: linear-gradient(90deg, #b9b9b9c8 18%, #bfbfbfb0 28%, #d3d3d3a6 53%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+}
+.skeleton-logo {
+  filter: saturate(0);
+}
+
+@keyframes shine {
+    to {
+        background-position: -240% 50%;
+        
+      }
+}
+
+/* about-section */
+.about-section {
+  padding: 120px 0;
+}
+
+.frame {
+  padding: 0 120px;
+  background: linear-gradient(290deg , var(--secondary-color-1) ,  var(--primary-color-1) ) ;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  place-items: center;
+  gap: 80px;
+}
+.about-img-container {
+  margin: -40px 0;
+  border-radius: 20px;
+  position: relative;
+  min-width: 100%;
+  height: 600px;
+  box-shadow: 0 0 25px #0006;
+  overflow: hidden;
+  transform: rotate(5deg);
+}
+.about-img-container::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2226;
+  transition: var(--main-transition);
+}
+.about-img-container:hover::after {
+  height: 0%;
+  background-color: #2220;
+}
+.about-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-det {
+  color: var(--main-white);
+}
+.about-det .about-title,
+.cta-content .cta-title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.about-det .about-text {
+  font-size: 1rem;
+  letter-spacing: .03rem;
+  text-align: justify;
+  word-spacing: .1rem;
+  opacity: .8;
+  margin-bottom: 20px;
+}
+.about-det > a {
+  font-size: 1.1rem;
+  letter-spacing: .03rem;
+  color: var(--main-white);
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  transition: var(--main-transition);
+}
+.about-det > a:hover {
+  text-decoration: underline;
+  gap: 8px;
+}
+
+/* why choose us */
+.why-choose {
+  background-color: var(--main-black);
+  color: var(--secondary-color-3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.wrapper {
+  width: 60%;
+}
+.wrapper .accordion {
+  background: var(--secondary-color-3);
+  padding: 10px 20px;
+  border-radius: 14px;
+  box-shadow: 1px 1px 25px #ccc8;
+  color: var(--main-black);
+}
+.accordion .item {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.accordion .item:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.accordion .item .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+  cursor: pointer;
+}
+.accordion .item .title h2,
+.accordion .item .title span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.accordion .item .description {
+  font-size: 15px;
+  letter-spacing: .02;
+  word-spacing: .1rem;
+  text-align: justify;
+  font-weight: 300;
+  opacity: .6;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s cubic-bezier(0,1,0,1);
+}
+.accordion .item .description.show {
+  height: auto;
+  max-height: 9999px;
+  transition: all .5s cubic-bezier(1,0,1,0);
+}
+
+/* CTA */
+
+.cta-section {
+  padding: 120px 0;
+}
+.cta-frame {
+  padding: 0 120px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  place-items: center;
+  gap: 40px;
+  background: linear-gradient(-290deg , var(--secondary-color-1) ,  var(--primary-color-1) ) ;
+}
+.cta-frame .cta-img-container {
+  margin: -40px 0;
+  border-radius: 20px;
+  position: relative;
+  min-width: 100%;
+  height: 600px;
+  box-shadow: 0 0 25px #0006;
+  overflow: hidden;
+  transform: rotate(-5deg);
+}
+.cta-frame .cta-img-container::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2226;
+  transition: var(--main-transition);
+}
+.cta-frame .cta-img-container:hover::after {
+  height: 0;
+  background-color: #2220;
+
+}
+.cta-frame .cta-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cta-content {
+  color: var(--main-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+/* .cta-content > a{
+  font-size: 1.2rem;
+  color: var(--primary-color-1);
+  background-color: var(--secondary-color-3);
+  padding: 12px 22px;
+  border-radius: 40px;
+} */
