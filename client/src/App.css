@@ -37,7 +37,7 @@ ul {
     list-style: none;
 }
 textarea {
-    resize: none;
+    resize: none !important;
 }
 img {
     width:100%;
