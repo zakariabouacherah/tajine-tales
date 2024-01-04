@@ -67,6 +67,10 @@ section > .top-footer > .input-group input::placeholder {
 }
 .scroll-to-top {
     z-index: 10 !important;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .footer-img-container {
     width: 10% !important;
@@ -82,7 +86,7 @@ section > .top-footer > .input-group input::placeholder {
     transform: rotate(90deg);
 }
 .footer-img-container img {
-    filter: saturate(120%);
+    filter: saturate(120%) drop-shadow(0 0 0.75rem #0006);
 }
 
 

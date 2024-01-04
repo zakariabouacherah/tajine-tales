@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useGetUserId } from "../hooks/useGetUserId";
 import "../style/createRecipe.css";
 import { useCookies } from "react-cookie";
+import Swal from 'sweetalert2'
 
 export const CreateRecipe = () => {
   const userID = useGetUserId();
@@ -38,7 +39,11 @@ export const CreateRecipe = () => {
       await axios.post("http://localhost:3001/recipes", recipe, {
         headers: { Authorization: cookies.access_token },
       });
-      alert("Recipe Created!");
+      Swal.fire({
+        title : "Success!",
+        text : "Recipe Created!",
+        icon : 'success'
+      })
       navigate("/recipes");
     } catch (err) {
       console.error(err);

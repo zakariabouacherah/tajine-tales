@@ -20,7 +20,7 @@ export const RecipesGrid = () => {
   const userID = useGetUserId();
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = 8;
   const [state, setState] = useState("");
   const [originalRecipes, setOriginalRecipes] = useState([]);
   useEffect(() => {
