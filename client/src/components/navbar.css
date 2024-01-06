@@ -38,9 +38,7 @@ nav {
   font-size: 1rem;
   position: relative;
 }
-.nav-item a {
-  color: var(--bg-color);
-}
+
 .nav-item::after {
   position: absolute;
   content: "";
@@ -56,8 +54,16 @@ nav {
 .nav-item:hover::after {
   width: 50%;
 }
+.nav-item a {
+  color: var(--bg-color);
+  transition: var(--main-transition);
+}
 .nav-item:hover > a {
   color: var(--secondary-color-1);
+}
+.nav-list:hover .nav-item:not(:hover) > a {
+  color: var(--primary-color-1);
+  opacity: .7;
 }
 .login-btn {
   color: var(--main-white);

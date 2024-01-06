@@ -91,7 +91,7 @@ section > .top-footer > .input-group input::placeholder {
 
 
 footer {
-    background: linear-gradient(180deg , var(--main-black), #313429c3);
+    background: linear-gradient(180deg , var(--main-black), #585858);
     padding: 220px 120px 40px ;
     margin: -143px 0 0 0;
     position: relative;

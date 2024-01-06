@@ -9,6 +9,7 @@ import RecipeDetails from "./pages/Single-Recipe"
 import { Home1 } from "./pages/Home/Home1";
 import { Recipes } from "./pages/Recipes/Recipes";
 import { About } from "./pages/About/About";
+import { Contact } from "./pages/Contact/Contact";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/saved-recipes" element={<SavedRecipes />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/recipes/:recipeID" element={<RecipeDetails />} />
+          <Route path="/contact" element={<Contact />} />
           
         </Routes>
       </Router>
