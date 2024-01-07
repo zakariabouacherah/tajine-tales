@@ -12,39 +12,39 @@ export const ContactForm = () => {
         <img src={contact} alt="contact" />
       </div>
       <form>
-        <div class="input-wrapper">
+        <div className="input-wrapper">
           <input
             autocomplete="off"
-            class="input"
+            className="input"
             type="text"
             id="name"
             placeholder="Name"
           />
-          <label class="label" for="name">
+          <label className="label" for="name">
             Name
           </label>
         </div>
-        <div class="input-wrapper">
+        <div className="input-wrapper">
           <input
             autocomplete="off"
-            class="input"
+            className="input"
             type="email"
             id="email"
             placeholder="Email"
           />
-          <label class="label" for="email">
+          <label className="label" for="email">
             Email
           </label>
         </div>
-        <div class="input-wrapper">
+        <div className="input-wrapper">
           <textarea
             autocomplete="off"
-            class="input"
+            className="input"
             id="message"
             placeholder="Message"
             rows={4}
           />
-          <label class="label" for="message">
+          <label className="label" for="message">
             Message
           </label>
         </div>
