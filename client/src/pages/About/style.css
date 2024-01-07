@@ -1,3 +1,6 @@
+.about-page > main > .banner {
+    background-image: url("../../../public/banner-about.jpg");
+}
 .aboutP-header {
     padding: 60px 120px;
     text-align: center;

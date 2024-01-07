@@ -1,0 +1,92 @@
+.latest-recipes {
+    padding: 0 120px 120px;
+}
+.loading {
+    font-size: 2rem;
+    text-align: center;
+}
+.l-recipe-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.l-recipes-list {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 20px;
+}
+.l-recipe-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 35px -10px #0006;
+    cursor: pointer;
+    position: relative;
+}
+.l-recipe-item:hover .l-r-image-container > img {
+    transform: scale(1.02);
+}
+.l-recipe-item:hover .l-save {
+    display: block;
+}
+.l-recipe-item:nth-of-type(2) {
+background-color: var(--secondary-color-4);
+color: #fff;
+}
+.l-r-image-container {
+    width: 100%;
+    height: 300px;
+    min-height: min-content;
+}
+.l-r-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--main-transition);
+}
+.l-recipe-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.l-recipe-details > h4 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.l-recipe-details > .cooking-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color-1);
+    margin-bottom: 10px;
+}
+.button-frame {
+    position: relative;
+    background: linear-gradient(120deg, var(--primary-color-1), var(--primary-color-2));
+    padding: 3px;
+    border-radius: 6px;
+}
+.l-recipe-details > .button-frame button:hover {
+    background: transparent;
+    color: #fff;
+}
+.l-recipe-details > .button-frame button {
+    background: #fff;
+    color: var(--primary-color-1);
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    transition: var(--main-transition);
+}
+.l-save {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    display: none;
+    transition: var(--main-transition);
+}
+.l-save svg path {
+    fill: #f2130f;
+}

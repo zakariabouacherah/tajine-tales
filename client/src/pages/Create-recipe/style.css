@@ -1,3 +1,7 @@
+.create-page > .banner {
+    background-image: url("../../../public/chef-cooking.jpg");
+    background-position: top !important;
+}
 .cre-rec-body {
     padding: 60px 120px 120px;
     display: flex;
@@ -7,7 +11,7 @@
 .cre-rec-body > .left {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 55%;
     text-align: center;
     gap: 60px;
 }
@@ -16,8 +20,14 @@
     opacity: .8;
     color: var(--main-black);
 }
+.cre-rec-body > .left > .cre-rec-img-container {
+    width: 60%;
+}
 .cre-rec-body > .left > .cre-rec-img-container img {
     height: 100%;
     object-fit: cover;
-
+    transform: rotateY(180deg);
+}
+.cre-rec-body > .right {
+    width: 45%;
 }

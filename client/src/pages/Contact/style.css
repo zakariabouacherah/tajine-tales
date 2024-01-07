@@ -102,12 +102,8 @@
     background-color: var(--secondary-color-4);
 }
 .contact-img-con {
-    width: 30%;
+    width: 60%;
 }
-.contact-img-con > img {
-    filter: contrast(140%) saturate(60%) hue-rotate(-130deg) ;
-}
-
 
 
 /* Infos section */

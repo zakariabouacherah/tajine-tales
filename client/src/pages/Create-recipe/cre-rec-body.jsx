@@ -1,4 +1,4 @@
-import chefCreate from "../../../public/chef-create.png"
+import chefCreate from "../../../public/cooking.svg"
 import {CreateRecipe} from "../Create-recipe"
 import "./style.css"
 

@@ -8,6 +8,7 @@ import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
+import {Banner} from "../components/banner"
 
 const RecipeDetails = () => {
   const { recipeID } = useParams();
@@ -47,7 +48,7 @@ const RecipeDetails = () => {
     };
     if (cookies.access_token) fetchSavedRecipes();
     fetchRecipeDetails();
-  }, [recipeID, userID]);
+  }, [recipeID, userID, savedRecipes]);
 
   const saveRecipe = async (recipeID) => {
     try {
@@ -79,27 +80,29 @@ const RecipeDetails = () => {
   const isSaved = (id) => savedRecipes.includes(id);
 
   return (
-    <div className="single-recipe">
+      
+    <section className="single-recipe">
       {loading ? (
         <div className="loading-container">
           <div className="lds-dual-ring"></div>
         </div>
       ) : (
-        <>
-          <div className="header">
-            <h2 className="recipe-title">{recipe.name}</h2>
+        <div className="single-recipe-body">
+        <Banner>{recipe.name} </Banner>
+          <div className="s-recipe-top">
+            <h2 className="s-recipe-title">{recipe.name}</h2>
             {cookies.access_token ? (
               <>
                 {isSaved(recipe._id) ? (
                   <button
-                    className="save"
+                    className="s-save"
                     onClick={() => unsaveRecipe(recipe._id)}
                   >
                     <FontAwesomeIcon icon={fasHeart} />
                   </button>
                 ) : (
                   <button
-                    className="save"
+                    className="s-save"
                     onClick={() => saveRecipe(recipe._id)}
                   >
                     <FontAwesomeIcon icon={farHeart} />
@@ -110,32 +113,34 @@ const RecipeDetails = () => {
               ""
             )}
           </div>
-          <div className="details">
-            <div className="left">
-              <div className="img-container">
+          <div className="s-recipe-body-det">
+            <div className="s-recipe-left">
+              <div className="s-recipe-img-container">
                 <img src={recipe.imageUrl} alt={recipe.name} />
               </div>
             </div>
-            <div className="right">
-              <p className="titre">Ingredients :</p>
-              <ul className="ingredients-list">
+            <div className="s-recipe-right">
+              <p className="s-recipe-title">Description :</p>
+              <p className="s-recipe-det">{recipe.description} </p>
+              <p className="s-recipe-title">Ingredients :</p>
+              <ul className="s-recipe-det">
                 {recipe.ingredients.map((i, idx) => (
-                  <li className="ing" key={idx}>
+                  <li className="" key={idx}>
                     {idx + 1}) {i}
                   </li>
                 ))}
               </ul>
-              <p className="titre">Instructions :</p>
-              <ul className="instructions">{recipe.instructions.split('.').slice(0, -1).map((item,index) => (
+              <p className="s-recipe-title">Instructions :</p>
+              <ul className="s-recipe-det">{recipe.instructions.split('.').slice(0, -1).map((item,index) => (
                 <li key={index}>{index+1}) {item}. </li>
               ))}</ul>
-              <p className="titre">Cooking Time :</p>
-              <p className="cookingTime">{recipe.cookingTime} minutes</p>
+              <p className="s-recipe-title">Cooking Time :</p>
+              <p className="s-recipe-det">{recipe.cookingTime} minutes</p>
             </div>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </section>
   );
 };
 

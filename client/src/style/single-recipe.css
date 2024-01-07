@@ -1,47 +1,54 @@
-.single-recipe {
-    padding: 40px 80px;
+.single-recipe-body {
+    color: var(--main-black);
 }
-.details {
+.single-recipe-body > .banner {
+    background-image: url("../../public/banner-recipe.jpg") !important;
+}
+
+.s-recipe-top {
+    padding: 60px 120px;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+}
+.s-recipe-top .s-recipe-title {
+    font-size: 2rem;
+}
+.s-recipe-top > .s-save {
+    font-size: 2rem;
+}
+.s-recipe-top > .s-save svg > path {
+    fill: #f2130f;
+}
+.s-recipe-body-det {
+    padding: 0 120px 60px;
+    display: flex;
     gap: 40px;
+    flex-direction: row-reverse;
 }
-.left,
-.right {
-    width: 100%;
+.s-recipe-left {
+    width: 45%;
 }
-.recipe-title {
-    font-size: 2.5rem;
-    font-weight: 300;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-}
-.img-container {
-    width: 100%;
-    height: 500px;
+.s-recipe-img-container {
+    border-radius: 50% 0 0 50%;
     overflow: hidden;
-    border-radius: 40px 10px 50% 10%;
+    height: 450px;
+    box-shadow: 0 0 35px -10px #000c;
 }
-.img-container img {
-    width: 100%;
+.s-recipe-img-container > img {
     height: 100%;
     object-fit: cover;
 }
-.titre {
-    font-size: 1.3rem;
+
+.s-recipe-right {
+    width: 55%;
+    font-size: .9rem;
+}
+.s-recipe-right > .s-recipe-title {
+    font-size: 1.1rem;
+    padding: 0 0 12px 12px;
     color: var(--primary-color-1);
-    font-weight: 400;
-    margin: 10px 0 6px;
 }
-.ingredients-list,
-.instructions,
-.cookingTime {
-    line-height: 1.8rem;
-    padding-left: 1em;
-}
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.s-recipe-right > .s-recipe-det {
+    margin-bottom: 20px;
 }

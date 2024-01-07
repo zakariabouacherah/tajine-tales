@@ -28,10 +28,13 @@ export const About = () => {
         },
     ]
     return (
+        <div className="about-page">
+        
         <Layout>
             <Banner>About moroccan cuisin</Banner>
             <AboutHeader/>
             <AboutBody />
         </Layout>
+        </div>
     )
 }

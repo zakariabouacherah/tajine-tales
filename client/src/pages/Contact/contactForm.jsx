@@ -1,4 +1,4 @@
-import contact from "../../../public/contact.png"
+import contact from "../../../public/contact-illustration.svg"
 export const ContactForm = () => {
   return (
     <div className="contact-form">
