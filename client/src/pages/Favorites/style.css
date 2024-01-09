@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     font-size: .9rem;
+    text-align: center;
 }
 .back-to-recipes > p {
     opacity: .8;

@@ -125,3 +125,26 @@ form.auth > button {
   background-color: var(--primary-color-2);
   color: var(--main-white);
 }
+@media screen and (max-width : 820px) {
+  .auth-container {
+    flex-direction: column-reverse;
+    /* background: linear-gradient(0deg , #fff , var(--secondary-color-1)); */
+    background: #fff !important;
+
+  }
+  .left-form {
+    width: 100%;
+    border-radius: 100px 100px  0 0 ;
+    background: linear-gradient(0deg , var(--secondary-color-3) , var(--secondary-color-1));
+  }
+  .right-form {
+    width: 100%;
+    border-radius: 0 ;
+  }
+  .left-form .form-title {
+    margin-bottom: 30px;
+  }
+  .left-form .text {
+    margin-bottom: 30px;
+  }
+}

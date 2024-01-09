@@ -288,7 +288,7 @@
   letter-spacing: .03rem;
   color: var(--main-white);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 5px;
   transition: var(--main-transition);
 }
@@ -403,10 +403,92 @@
   flex-direction: column;
   align-items: flex-start;
 }
-/* .cta-content > a{
-  font-size: 1.2rem;
-  color: var(--primary-color-1);
-  background-color: var(--secondary-color-3);
-  padding: 12px 22px;
-  border-radius: 40px;
-} */
+
+
+/* Media query */
+
+@media screen and (max-width : 820px) {
+  .hero-section {
+    padding: 0 4rem;
+    gap: 20px;
+    height: 100dvh;
+  }
+  .hero-section-title:not(.logo1) {
+    width: 100%;
+  }
+  .section-header .section-title {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+  }
+  .section-header .section-text {
+    font-size: 0.9rem;
+  }
+  .recipes-list {
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 10px;
+  }
+  .recipes-section {
+    padding: 40px 60px;
+  }
+  .recipe-item .image-container {
+    height: 200px;
+  }
+  .recipe-item .recipe-details h4 {
+    margin-bottom: 0;
+  }
+  .save {
+    background-color: transparent;
+    display: block;
+  }
+  .about-section {
+    padding: 200px 0 0;
+  }
+  .frame {
+    padding: 0 40px 40px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-img-container {
+    margin: -150px 0 0;
+    position: relative;
+    min-width: 80%;
+    height: 300px;
+    transform: rotate(0deg);
+  }
+  .about-det .about-title, .cta-content .cta-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .about-det .about-text {
+    font-size: .9rem;
+    margin-bottom: 10px;
+  }
+  .about-det > a {
+    font-size: 1rem;
+  }
+  .wrapper {
+    width: 100%;
+  }
+  .accordion .item .description {
+    font-size: 14px;
+    letter-spacing: auto;
+  }
+  .cta-section {
+    padding: 60px 0;
+  }
+  .cta-frame {
+    padding: 0 60px;
+    gap: 10px;
+  }
+  .cta-content {
+    padding: 20px 0;
+  }
+  .cta-frame .cta-img-container {
+    margin: -40px 0;
+    height: 300px;
+    transform: rotate(-5deg);
+  }
+  .cta-content > .get-started-btn {
+    margin-top: 0;
+  }
+}

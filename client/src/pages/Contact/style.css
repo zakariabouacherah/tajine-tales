@@ -168,3 +168,37 @@
 .contact-left {
     flex : 1 ;
 }
+
+@media screen and (max-width : 820px) {
+  .contact-banner {
+      height: 50svh;
+      padding: 0 60px;
+  }
+  .contact-banner > h1 {
+    font-size: 2.5rem;
+  }
+  .contact-body {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 0 ;
+  }
+  .contact-info {
+    margin: 0 120px;
+    padding: 40px 60px;
+  }
+  .contact-info::before {
+    top: 0%;
+    left: -30%;
+    height: 50%;
+    width: 200%;
+  }
+  .contact-info > .infos-list {
+    line-height: 3rem;
+  }
+  .contact-info > .infos-list > .infos-item > svg {
+    width: 20px;
+    height: 20px;
+    padding: 6px;
+  }
+  
+}

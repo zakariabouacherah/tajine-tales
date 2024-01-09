@@ -31,3 +31,19 @@
 .cre-rec-body > .right {
     width: 45%;
 }
+
+
+@media screen and (max-width : 820px) {
+    .cre-rec-body {
+        padding: 30px 60px 60px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cre-rec-body > .left {
+        width: 75%;
+        gap: 30px;
+    }
+    .cre-rec-body > .right {
+        width: 85%;
+    }
+}

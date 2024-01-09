@@ -26,11 +26,7 @@ export const Footer = ({ children }) => {
         <div className="top-footer">
           <h1>Stay in touch</h1>
           <p>
-            Let's keep the culinary conversation alive! Stay in the loop with
-            the latest Moroccan recipes, cooking tips, and foodie adventures.
-            Subscribe to our newsletter for a monthly dose of inspiration and
-            join us on social media for real-time updates. Your journey into
-            Moroccan cuisine is just a click away!
+          Subscribe to our newsletter for Moroccan recipes and cooking tips, and join us on social media for real-time updates. Immerse yourself in Moroccan cuisine today!
           </p>
           <div className="input-group">
             <input type="email" placeholder="Enter you email" />
