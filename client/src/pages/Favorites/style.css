@@ -1,0 +1,38 @@
+.favorites-banner > .banner {
+    background-image: url("../../../public/favorites.jpg");
+}
+.favorites-container {
+    padding: 60px 120px 120px;
+}
+.empty  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+.empty > img {
+    width: 40%;
+}
+.back-to-recipes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .9rem;
+}
+.back-to-recipes > p {
+    opacity: .8;
+    margin-bottom: 10px;
+}
+.back-to-recipes > a {
+    color: var(--primary-color-1);
+    text-transform: uppercase;
+}
+.back-to-recipes > a:hover {
+    text-decoration: underline;
+}
+
+.recipes-list-grid {
+    margin-bottom: 20px;
+}
+

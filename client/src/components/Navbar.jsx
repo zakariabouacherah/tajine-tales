@@ -74,13 +74,13 @@ export const Navbar = () => {
             {isProfileOpen && (
               <div className="dropdown-content">
                 <div className="username">{username.toUpperCase()}</div>
-                <Link className="profile-list" to="/saved-recipes">
+                <Link className="profile-list" to="/favorites">
                   <span className="favourites" >
                     <FontAwesomeIcon icon={faHeart} />
                   </span>
                   <span>Favourites</span>
                 </Link>
-                <Link onClick={logout} className="btn login-btn" to="/auth">
+                <Link onClick={logout} className="btn login-btn" >
                   Logout
                 </Link>
               </div>
