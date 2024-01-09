@@ -14,37 +14,37 @@ export const ContactForm = () => {
       <form>
         <div className="input-wrapper">
           <input
-            autocomplete="off"
+            autoComplete="off"
             className="input"
             type="text"
             id="name"
             placeholder="Name"
           />
-          <label className="label" for="name">
+          <label className="label" htmlFor="name">
             Name
           </label>
         </div>
         <div className="input-wrapper">
           <input
-            autocomplete="off"
+            autoComplete="off"
             className="input"
             type="email"
             id="email"
             placeholder="Email"
           />
-          <label className="label" for="email">
+          <label className="label" htmlFor="email">
             Email
           </label>
         </div>
         <div className="input-wrapper">
           <textarea
-            autocomplete="off"
+            autoComplete="off"
             className="input"
             id="message"
             placeholder="Message"
             rows={4}
           />
-          <label className="label" for="message">
+          <label className="label" htmlFor="message">
             Message
           </label>
         </div>

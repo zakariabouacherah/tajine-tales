@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import { useState } from "react";
+import {  useState } from "react";
 import "./navbar.css";
 import { Logo } from "./logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +13,7 @@ export const Navbar = () => {
   const firstLetter = username ? username.charAt(0).toUpperCase() : "";
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [color , setColor] = useState(false)
+  
 
   const changeColor = () => {
     if (window.scrollY >= 67) {

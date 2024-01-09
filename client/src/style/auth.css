@@ -1,69 +1,127 @@
 .auth-container {
-  height: calc(100vh - 58.5px);
-  background-color: rgba(233, 233, 233, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(0deg , #fff , var(--secondary-color-1));
+  height: 100dvh;
+  width: 100%;
+}
+.left-form {
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:20px ;
-}
-.auth-container h2 {
-  font-size: 2.3rem;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-form.auth {
-  min-width: 300px;
-  width: 420px;
-  padding: 20px 34px;
-  border-radius: 16px;
-  background-color: var(--main-white);
-  box-shadow: 0 0 15px 5px #00000013;
-}
-.form-group {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  gap: 10px;
-  margin: 30px 0;
-}
-.form-group label {
-  font-size: .8rem;
-  color: var(--text-color);
-}
-.form-group input,
-.form-group textarea {
-  font-size: 1rem;
-  color: var(--text-color);
-  padding: 4px 6px;
-  outline: none;
-  border: 1.5px solid var(--text-color);
-  border-radius: 4px;
-}
-.form-group input:focus,
-.form-group textarea:focus  {
-  border-color:  var(--primary-color-1);
-}
-.auth-btn {
-  padding: 6px 12px;
-  border-radius: 40px;
-  font-size: 1rem;
+  border-radius: 0 0 100px 0;
+  overflow: hidden;
   color: var(--main-white);
-  background-color: var(--primary-color-1);
-  border: none;
-  transition: var(--main-transition);
-  cursor: pointer;
+  background: linear-gradient(60deg , var(--secondary-color-3) , var(--secondary-color-1));
 }
-.auth-btn:hover {
-  transform: scale(1.04);
+.left-form .form-title {
+  font-size: 2.6rem;
+  
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  font-weight: 300;
 }
-.text {
-  font-size: .8rem;
-  color: var(--text-color);
-  margin-bottom: 20px;
+.left-form .login-img-container {
+  width: 60%;
+  margin-bottom: 40px;
+  height: 220px;
+  overflow: hidden;
 }
-.text > span {
+.left-form .login-img-container > img {
+  height: 100%;
+  object-fit: contain;
+
+}
+.left-form .text {
+  margin-bottom: 100px;
+}
+.left-form .text > span {
   color: var(--primary-color-1);
   cursor: pointer;
+  transition: var(--main-transition);
+}
+.left-form .text > span:hover {
+  text-decoration: underline;
+  opacity: .8;
+}
+.left-form > a {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  opacity: .6;
+}
+.left-form > a:hover {
+  opacity: 1;
+}
+.right-form {
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 100px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-frame {
+  background-color: #efefef;
+  padding: 1rem 0 0 0;
+  border-radius: 20px;
+  box-shadow: 0 0 35px -10px #0002;
+}
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  margin-bottom: 2px;
+}
+.form-header > .active-form {
+  font-size: 1.1rem;
+  padding-bottom: 6px;
+  border-bottom: 4px solid var(--primary-color-2);
+  border-radius: 10%;
+}
+.form-header > .switch-form {
+  opacity: .6;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.form-header > .switch-form:hover {
+  /* opacity: 1; */
+  color: var(--primary-color-2);
+  cursor: pointer;
+}
+form.auth {
+  background-color: var(--main-white);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 0 35px -10px #0002;
+}
+form.auth .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+form.auth .form-group > label {
+  font-size: .9rem;
+  opacity: .8;
+}
+form.auth .form-group > input,
+form.auth > button {
+  font-size: .9rem;
+  outline: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px -5px #0002;
+}
+form.auth > button {
+  width: 100%;
+  background-color: var(--primary-color-2);
+  color: var(--main-white);
 }

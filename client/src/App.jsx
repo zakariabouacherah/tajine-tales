@@ -1,4 +1,4 @@
-import "./App.css"
+import "./App.css";
 import { CreateRecipe } from "./pages/Create-recipe/CreateRecipe";
 import { SavedRecipes } from "./pages/Saved-recipes";
 import { Auth } from "./pages/Auth";
@@ -9,13 +9,15 @@ import { Recipes } from "./pages/Recipes/Recipes";
 import { About } from "./pages/About/About";
 import { Contact } from "./pages/Contact/Contact";
 import { SingleRecipePage } from "./pages/Single-recipe/singleRecipePage";
-
+import { MaybeShowNavbar } from "./components/maybeShowNavbar";
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <MaybeShowNavbar>
+          <Navbar />
+        </MaybeShowNavbar>
         <Routes>
           <Route path="/" element={<Home1 />} />
           <Route path="/recipes" element={<Recipes />} />
@@ -25,7 +27,6 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/recipes/:recipeID" element={<SingleRecipePage />} />
           <Route path="/contact" element={<Contact />} />
-          
         </Routes>
       </Router>
     </>
