@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../style/home.css";
 import "../style/single-recipe.css";
 import { useGetUserId } from "../hooks/useGetUserId";
 import { useCookies } from "react-cookie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
-import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
-import {Banner} from "../components/banner"
+import { faHeart as fasHeart, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const RecipeDetails = () => {
   const { recipeID } = useParams();
@@ -88,7 +87,15 @@ const RecipeDetails = () => {
         </div>
       ) : (
         <div className="single-recipe-body">
-        <Banner>{recipe.name} </Banner>
+          <div className="s-r-banner">
+            <img src={recipe.imageUrl} alt="" />
+            <h2>{recipe.name} </h2>
+          </div>
+          <div className="arian">
+            <Link to="/recipes">Recipes</Link>
+            <FontAwesomeIcon icon={faChevronRight} />
+            <span> {recipe.name} </span>
+          </div>
           <div className="s-recipe-top">
             <h2 className="s-recipe-title">{recipe.name}</h2>
             {cookies.access_token ? (

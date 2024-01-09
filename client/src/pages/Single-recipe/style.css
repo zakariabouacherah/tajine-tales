@@ -90,3 +90,40 @@ color: #fff;
 .l-save svg path {
     fill: #f2130f;
 }
+
+.s-r-banner {
+    width: 100%;
+    height: 50dvh;
+    overflow: hidden;
+    position: relative;
+}
+.s-r-banner > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(55%) saturate(80%);
+}
+.s-r-banner > h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: var(--main-white);
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #000;
+}
+.arian {
+    padding: 60px 140px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 18px;
+    color: var(--main-black);
+}
+.arian span {
+    cursor: pointer;
+}
+.arian a:hover {
+    text-decoration: underline;
+}

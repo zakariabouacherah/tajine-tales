@@ -223,3 +223,15 @@
     text-decoration: underline;
     gap: 15px;
 }
+.show-more {
+  color: var(--primary-color-1);
+  opacity: .8;
+  transition: var(--main-transition);
+}
+.show-more:hover {
+  color: var(--secondary-color-1);
+}
+.skeleton-item {
+  height: 350px;
+  width: 300px;
+}

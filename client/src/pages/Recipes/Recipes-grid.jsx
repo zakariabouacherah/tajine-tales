@@ -1,12 +1,9 @@
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
-import {
-  faHeart as fasHeart,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHeart as fasHeart, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useGetUserId } from "../../hooks/useGetUserId";
 import { useCookies } from "react-cookie";
 import { Logo1 } from "../../components/logo1";
@@ -19,10 +16,10 @@ export const RecipesGrid = () => {
   const [loading, setLoading] = useState(true);
   const userID = useGetUserId();
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
   const [state, setState] = useState("");
   const [originalRecipes, setOriginalRecipes] = useState([]);
+  const [showMore, setShowMore] = useState(false);
+
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
@@ -61,7 +58,7 @@ export const RecipesGrid = () => {
         )
       );
     },
-    [state , originalRecipes],
+    [state, originalRecipes],
     500,
     1000
   );
@@ -99,40 +96,23 @@ export const RecipesGrid = () => {
     navigate(`/recipes/${recipeID}`);
   };
 
-  const indexOfLastRecipe = currentPage * itemsPerPage;
-  const indexOfFirstRecipe = indexOfLastRecipe - itemsPerPage;
-
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const handleShowMore = () => {
+    setShowMore(true);
+  };
 
   return (
     <div className="recipes-grid-container">
       {loading ? (
         <>
-        <div className=" header header-skeleton"></div>
-
-        <ul className="recipes-list-grid">
-          <li className="one-recipe skeleton-item ">
-            <div className="skeleton-logo">
-              <Logo1 />
-            </div>          
-          </li>
-          <li className="one-recipe skeleton-item ">
-            <div className="skeleton-logo">
-              <Logo1 />
-            </div>          
-          </li>
-          <li className="one-recipe skeleton-item ">
-            <div className="skeleton-logo">
-              <Logo1 />
-            </div>          
-          </li>
-          <li className="one-recipe skeleton-item ">
-            <div className="recipe-img-container"></div>
-            <div className="skeleton-logo">
-              <Logo1 />
-            </div>          
-          </li>
-        </ul>
+          <ul className="recipes-list-grid">
+            {[...Array(12).keys()].map((index) => (
+              <li className="skeleton-item one-recipe" key={index}>
+                <div className="skeleton-logo">
+                  <Logo1 />
+                </div>
+              </li>
+            ))}
+          </ul>
         </>
       ) : (
         <>
@@ -151,61 +131,93 @@ export const RecipesGrid = () => {
             </div>
           </div>
           <ul className="recipes-list-grid">
-            {recipes
-              .slice(indexOfFirstRecipe, indexOfLastRecipe)
-              .map((recipe) => (
-                <li
-                  onClick={() => goToRecipeDetails(recipe._id)}
-                  className="one-recipe"
-                  key={recipe._id}
-                >
-                  <div className="recipe-img-container">
-                    <img src={recipe.imageUrl} alt={recipe.name} />
-                  </div>
-                  <div className="recipe-det">
-                    <h4>{recipe.name}</h4>
-                    <p>Cooking time : {recipe.cookingTime} minutes</p>
-                    <button onClick={() => goToRecipeDetails(recipe._id)}>
-                      See Recipe
-                    </button>
-                  </div>
-                  {cookies.access_token ? (
-                    <>
-                      <button
-                        className="save"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          isSaved(recipe._id)
-                            ? unsaveRecipe(recipe._id)
-                            : saveRecipe(recipe._id);
-                        }}
-                      >
-                        {isSaved(recipe._id) ? (
-                          <FontAwesomeIcon icon={fasHeart} />
-                        ) : (
-                          <FontAwesomeIcon icon={farHeart} />
-                        )}
+            {showMore
+              ? recipes.map((recipe) => (
+                  <li
+                    onClick={() => goToRecipeDetails(recipe._id)}
+                    className="one-recipe"
+                    key={recipe._id}
+                  >
+                    <div className="recipe-img-container">
+                      <img src={recipe.imageUrl} alt={recipe.name} />
+                    </div>
+                    <div className="recipe-det">
+                      <h4>{recipe.name}</h4>
+                      <p>Cooking time : {recipe.cookingTime} minutes</p>
+                      <button onClick={() => goToRecipeDetails(recipe._id)}>
+                        See Recipe
                       </button>
-                    </>
-                  ) : (
-                    ""
-                  )}
-                </li>
-              ))}
+                    </div>
+                    {cookies.access_token ? (
+                      <>
+                        <button
+                          className="save"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            isSaved(recipe._id)
+                              ? unsaveRecipe(recipe._id)
+                              : saveRecipe(recipe._id);
+                          }}
+                        >
+                          {isSaved(recipe._id) ? (
+                            <FontAwesomeIcon icon={fasHeart} />
+                          ) : (
+                            <FontAwesomeIcon icon={farHeart} />
+                          )}
+                        </button>
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </li>
+                ))
+              : recipes.slice(0, 12).map((recipe) => (
+                  <li
+                    onClick={() => goToRecipeDetails(recipe._id)}
+                    className="one-recipe"
+                    key={recipe._id}
+                  >
+                    <div className="recipe-img-container">
+                      <img src={recipe.imageUrl} alt={recipe.name} />
+                    </div>
+                    <div className="recipe-det">
+                      <h4>{recipe.name}</h4>
+                      <p>Cooking time : {recipe.cookingTime} minutes</p>
+                      <button onClick={() => goToRecipeDetails(recipe._id)}>
+                        See Recipe
+                      </button>
+                    </div>
+                    {cookies.access_token ? (
+                      <>
+                        <button
+                          className="save"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            isSaved(recipe._id)
+                              ? unsaveRecipe(recipe._id)
+                              : saveRecipe(recipe._id);
+                          }}
+                        >
+                          {isSaved(recipe._id) ? (
+                            <FontAwesomeIcon icon={fasHeart} />
+                          ) : (
+                            <FontAwesomeIcon icon={farHeart} />
+                          )}
+                        </button>
+                      </>
+                    ) : (
+                      ""
+                    )}
+                  </li>
+                ))}
           </ul>
-          <div className="pagination">
-            {Array.from({
-              length: Math.ceil(recipes.length / itemsPerPage),
-            }).map((_, index) => (
-              <button
-                className={currentPage === index + 1 ? "currentPage" : ""}
-                key={index + 1}
-                onClick={() => paginate(index + 1)}
-              >
-                {index + 1}
+          {!showMore && (
+            <div className="show-more-container">
+              <button className="show-more" onClick={handleShowMore}>
+                Show More ...
               </button>
-            ))}
-          </div>
+            </div>
+          )}
         </>
       )}
     </div>
