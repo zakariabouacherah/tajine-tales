@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
-import {  useState } from "react";
+import { useState } from "react";
 import "./navbar.css";
 import { Logo } from "./logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const Navbar = () => {
   const [cookies, setCookies] = useCookies(["access_token"]);
@@ -12,18 +12,23 @@ export const Navbar = () => {
   const username = window.localStorage.getItem("username");
   const firstLetter = username ? username.charAt(0).toUpperCase() : "";
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [color , setColor] = useState(false)
-  
+  const [color, setColor] = useState(false);
+  const [navbarActive , setNavbarActive] = useState(false)
 
   const changeColor = () => {
     if (window.scrollY >= 67) {
-      setColor(true)
+      setColor(true);
     } else {
-      setColor(false)
+      setColor(false);
     }
+  };
+  const showNavbar = () => {
+    setNavbarActive(true)
   }
-
-  window.addEventListener('scroll' , changeColor)
+  const hideNavbar = () => {
+    setNavbarActive(false)
+  }
+  window.addEventListener("scroll", changeColor);
 
   const toggleProfile = () => {
     setIsProfileOpen(!isProfileOpen);
@@ -41,30 +46,30 @@ export const Navbar = () => {
   };
   return (
     <nav className={color ? "nav-bg" : ""}>
+      <Link className="logo" to="/">
+        <Logo />
+      </Link>
+      <div className={navbarActive ? "nav active" : "nav"}>
+
       <div className="left">
-        <Link className="logo" to="/">
-          <Logo />
-        </Link>
         <ul className="nav-list">
-          <li className="nav-item">
+          <li className="nav-item" onClick={hideNavbar}>
             <Link to="/">Home</Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={hideNavbar}>
             <Link to="/recipes">Recipes</Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={hideNavbar}>
             <Link to="/about">About</Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item" onClick={hideNavbar}>
             <Link to="/contact">Contact</Link>
           </li>
-          {/* <li className="nav-item">
-          <Link to="/create-recipe">Create a recipe</Link>
-        </li> */}
         </ul>
       </div>
+      <>
       {!cookies.access_token ? (
-        <Link className="btn login-btn" to="/auth">
+        <Link className="btn login-btn" to="/auth" onClick={hideNavbar}>
           REGISTER
         </Link>
       ) : (
@@ -74,13 +79,13 @@ export const Navbar = () => {
             {isProfileOpen && (
               <div className="dropdown-content">
                 <div className="username">{username.toUpperCase()}</div>
-                <Link className="profile-list" to="/favorites">
+                <Link className="profile-list" to="/favorites" onClick={hideNavbar}>
                   <span className="favourites" >
                     <FontAwesomeIcon icon={faHeart} />
                   </span>
                   <span>Favourites</span>
                 </Link>
-                <Link onClick={logout} className="btn login-btn" >
+                <Link onClick={logout} className="btn login-btn" to="/auth">
                   Logout
                 </Link>
               </div>
@@ -98,12 +103,22 @@ export const Navbar = () => {
                 height: "100svh",
                 background: "rgba(0, 0, 0, 0.3)",
                 backdropFilter: "blur(4px)",
-                zIndex : "11"
+                zIndex: "11",
               }}
             ></div>
           )}
         </div>
       )}
+      <div className="close" onClick={hideNavbar}>
+        <FontAwesomeIcon icon={faXmark} />
+      </div>
+      </>
+
+      </div>
+      <div className="hamburger" onClick={showNavbar}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
+      <div className={navbarActive ? "nav-overlay active" : "nav-overlay"} onClick={hideNavbar}></div>
     </nav>
   );
 };
