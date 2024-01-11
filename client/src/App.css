@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 
 :root {
     --primary-color-1 : #758650;
@@ -27,7 +27,7 @@
 
 .logo,
 .logo > span {
-    font-family: 'Rubik Scribble' , sans-serif;
+    font-family: 'Rubik Glitch', system-ui;
 }
 
 a {

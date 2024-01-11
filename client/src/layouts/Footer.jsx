@@ -10,8 +10,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css";
 import ScrollToTop from "react-scroll-to-top";
-import tajin from "../../public/tajinePng.png"
-import tajin2 from "../../public/tajin2.png"
+import tajin from "../../public/tajinePng.png";
+import tajin2 from "../../public/tajin2.png";
+import logo from "../../public/TajineTales-logo.png";
 
 export const Footer = ({ children }) => {
   return (
@@ -26,7 +27,9 @@ export const Footer = ({ children }) => {
         <div className="top-footer">
           <h1>Stay in touch</h1>
           <p>
-          Subscribe to our newsletter for Moroccan recipes and cooking tips, and join us on social media for real-time updates. Immerse yourself in Moroccan cuisine today!
+            Subscribe to our newsletter for Moroccan recipes and cooking tips,
+            and join us on social media for real-time updates. Immerse yourself
+            in Moroccan cuisine today!
           </p>
           <div className="input-group">
             <input type="email" placeholder="Enter you email" />
@@ -34,17 +37,20 @@ export const Footer = ({ children }) => {
           </div>
         </div>
         <div className="footer-img-container left">
-        <img src={tajin} alt="tajin" />
+          <img src={tajin} alt="tajin" />
         </div>
         <div className="footer-img-container right">
-        <img src={tajin2} alt="tajin" />
+          <img src={tajin2} alt="tajin" />
         </div>
       </section>
       <footer>
         <div className="rows">
           <div className="row">
-            <Logo />
-            <Logo1 />
+            <Link to="/">
+              {/* <Logo />
+              <Logo1 /> */}
+              <img src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="row">
             <Link to="/recipes">Our Recipes</Link>

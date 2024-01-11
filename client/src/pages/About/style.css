@@ -119,3 +119,49 @@
         padding: 30px 60px 60px;
     }
 }
+@media screen and (max-width: 667px) {
+    .aboutP-header {
+        padding: 30px 30px;
+    }
+    .aboutP-title {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+    .aboutP-text {
+        width: 100%;
+    }
+    .aboutP-text, .aboutP-text > .logo1 {
+        font-size: .9rem;
+    }
+    .about-body {
+        padding: 30px 30px 60px;
+    }
+    .about-item {
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        height: auto;
+    }
+    .about-item:nth-of-type(2n) {
+        flex-direction: column;
+    }
+    .about-item .det {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .about-item .img {
+        width: 100%;
+        height: 200px;
+    }
+    .about-item .det > h1 {
+        font-size: 1.2rem;
+    }
+    .about-item .det > p {
+        opacity: .8;
+        font-size: .8rem;
+    }
+    .about-item .det > h1::after {
+        height: 3px;
+    }
+
+}

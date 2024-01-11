@@ -43,7 +43,7 @@ export const Cta = () => {
       <div className="p-section why-choose">
         <div className="section-header">
           <h1 className="section-title">
-            Why <span>choose us </span> ?
+            Why <span>choose </span> us ?
           </h1>
           <p className="section-text">
             Choose <Logo1 /> for an authentic Moroccan culinary experience that

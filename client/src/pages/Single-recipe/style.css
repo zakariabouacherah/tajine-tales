@@ -161,3 +161,25 @@ color: #fff;
         display: block;
     }
 }
+@media screen and (max-width: 667px) {
+    .arian {
+        padding: 40px 45px 0;
+    }
+    .s-recipe-top {
+        padding: 20px 30px;
+    }
+    .s-recipe-top .s-recipe-title,
+    .s-recipe-top > .s-save {
+        font-size: 1.6rem;
+    }
+    .s-recipe-body-det {
+        padding: 0 30px 20px;
+        flex-direction: column-reverse;
+    }
+    .l-recipes-list {
+        grid-template-columns: 1fr;
+    }
+    .contact-banner > h1 {
+        font-size: 2rem;
+    }
+}

@@ -47,3 +47,15 @@
         width: 85%;
     }
 }
+@media screen and (max-width: 667px) {
+    .cre-rec-body {
+        padding: 30px 30px 60px;
+    }
+    .cre-rec-body > .left {
+        width: 100%;
+        gap: 30px;
+    }
+    form.create-form {
+        width: auto ;
+    }
+}

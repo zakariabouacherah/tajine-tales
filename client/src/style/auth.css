@@ -147,4 +147,23 @@ form.auth > button {
   .left-form .text {
     margin-bottom: 30px;
   }
+  .form-frame {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width : 667px) {
+  .left-form .form-title {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  .left-form .login-img-container {
+    margin-bottom: 20px;
+  }
+  .left-form .text {
+    margin-bottom: 10px;
+  }
+  form.auth {
+    background-color: var(--main-white);
+    padding: 1.5rem 2rem;
+  }
 }

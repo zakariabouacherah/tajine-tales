@@ -89,6 +89,7 @@
 .input:focus + .label,
 .input:not(:placeholder-shown) + .label {
   transform: translateY(-100%) scale(0.8);
+  color: var(--primary-color-1);
 }
 
 .contact-submit {
@@ -171,7 +172,7 @@
 
 @media screen and (max-width : 820px) {
   .contact-banner {
-      height: 50svh;
+      height: 60svh;
       padding: 0 60px;
   }
   .contact-banner > h1 {
@@ -187,10 +188,7 @@
     padding: 40px 60px;
   }
   .contact-info::before {
-    top: 0%;
-    left: -30%;
-    height: 50%;
-    width: 200%;
+    width: 0%;
   }
   .contact-info > .infos-list {
     line-height: 3rem;
@@ -201,4 +199,34 @@
     padding: 6px;
   }
   
+}
+@media screen and (max-width: 667px) {
+  .contact-info {
+    margin: 40px 0 ;
+  }
+  .contact-info::after {
+    left: 50%;
+    top: 0;
+    transform: translateY(-50%);
+  }
+  .contact-info::before {
+    opacity: 0;
+    width: 0;
+  }
+  .contact-form {
+    padding: 40px 30px;
+  }
+  .contact-form > p {
+    width: 100%;
+    font-size: .8rem;
+  }
+  .contact-img-con {
+    width: 80%;
+  }
+  .label {
+    font-size: .8rem;
+  }
+  .input {
+    font-size: .9rem;
+  }
 }
