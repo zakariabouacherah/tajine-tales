@@ -9,6 +9,7 @@ import {
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 import { useGetUserId } from "../../hooks/useGetUserId";
 import { useCookies } from "react-cookie";
+import logo from "../../../public/TajineTales-logo.png"
 
 export const SingleRecipeLatest = () => {
   const [recipes, setRecipes] = useState([]);
@@ -100,7 +101,7 @@ export const SingleRecipeLatest = () => {
                 key={recipe._id}
               >
                 <div className="l-r-image-container">
-                  <img src={recipe.imageUrl} alt={recipe.name} />
+                  <img src={recipe.imageUrl || logo } alt={recipe.name} />
                 </div>
                 <div className="l-recipe-details">
                   <h4>{recipe.name}</h4>
